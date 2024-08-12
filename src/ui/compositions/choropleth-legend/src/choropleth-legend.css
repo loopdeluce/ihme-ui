@@ -1,7 +1,13 @@
+.legend-container {
+    overflow: visible !important;
+    width: 100%;
+}
+
 .title-container {
     color: #142027;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     margin-bottom: 10px;
 }
 
@@ -14,7 +20,9 @@
 .helper-text {
     font-size: 14px;
     font-weight: 400;
+    overflow-wrap: break-word;
     text-align: left;
+    white-space: nowrap;
 }
 
 .density-circle {

@@ -12,40 +12,67 @@
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #1e7b53;
     border-radius: 0px;
-    color: #1e7b53;
-    fill: #1e7b53;
-    background-color: #fffefc;
 }
 
-.choropleth-legend-button:hover, .choropleth-legend-button:focus, .choropleth-legend-button:hover:not(:disabled), .choropleth-legend-button:focus:not(:disabled) {
-    background-color: #1e7b53;
-    color: #fffefc;
-    fill: #fffefc;
-    cursor: pointer;
-}
-
-.choropleth-legend-button:active, .choropleth-legend-button:active:not(:disabled) {
-    background-color: #3e525e;
-    border-color: #3e525e;
-    cursor: pointer;
-    color: #fffefc;
-    fill: #fffefc;
-}
-
-.choropleth-legend-button:disabled {
+.choropleth-legend-button:disabled,
+.chloropleth-legend-button.reset:disabled,
+.choropleth-legend-button:disabled:hover,
+.chloropleth-legend-button.reset:disabled:hover,
+.choropleth-legend-button:disabled:focus,
+.chloropleth-legend-button.reset:disabled:focus,
+.choropleth-legend-button:disabled:active,
+.chloropleth-legend-button.reset:disabled:active {
     background-color: #fffefc;
     border-color: #677378;
     color: #677378;
     fill: #677378;
 }
 
+.choropleth-legend-button {
+    border: 1px solid #1e7b53;
+    color: #1e7b53;
+    fill: #1e7b53;
+    background-color: #fffefc;
+}
+
+.choropleth-legend-button:not(:disabled):hover, .choropleth-legend-button:not(:disabled):focus {
+    background-color: #1e7b53;
+    color: #fffefc;
+    fill: #fffefc;
+}
+
+.choropleth-legend-button:not(:disabled):active {
+    background-color: #3e525e;
+    border-color: #3e525e;
+    color: #fffefc;
+    fill: #fffefc;
+}
+
+.choropleth-legend-button.reset:not(:disabled) {
+    border: 1px solid #e4281b;
+    color: #e4281b;
+    fill: #e4281b;
+}
+
+.choropleth-legend-button.reset:not(:disabled):hover, .choropleth-legend-button.reset:not(:disabled):focus {
+    background-color: #e4281b;
+    color: #fffefc;
+    fill: #fffefc;
+}
+
+.choropleth-legend-button.reset:not(:disabled):active {
+    background-color: #560e0b;
+    border-color: #560e0b;
+    color: #fffefc;
+    fill: #fffefc;
+}
+
 .button-wrapper {
     flex: 1 1 auto;
     flex-wrap: wrap;
     align-self: center;
-    margin: 40px 0px 0px 10px
+    margin: 40px 10px 0px 10px
 }
 
 .button-wrapper button:first-child {
@@ -56,14 +83,19 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 140px;
+    height: 160px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.6);
     display: flex;
 }
 
+.legend-responsive-container {
+    height: 100px !important;
+    width: 100px !important;
+}
+
 .legend-wrapper {
-    flex: 2 0 90%;
+    width: 100%;
 }
 
 .map {
