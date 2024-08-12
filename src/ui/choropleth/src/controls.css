@@ -43,14 +43,18 @@
   justify-content: center !important;
 }
 
-.control:hover, .control:focus, .control:hover:not(:disabled), .control:focus:not(:disabled) {
+.control:nth-child(3) {
+  border-top: 0px !important;
+}
+
+.control:hover, .control:focus, .control:not(:disabled):hover, .control:not(:disabled):focus {
   background-color: #1e7b53 !important;
   color: #fffefc !important;
   fill: #fffefc !important;
   cursor: pointer;
 }
 
-.control:active, .control:active:not(:disabled) {
+.control:active, .control:not(:disabled):active {
   background-color: #3e525e !important;
   border-color: #3e525e !important;
   color: #fffefc !important;
