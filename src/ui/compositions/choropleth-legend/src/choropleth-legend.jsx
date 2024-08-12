@@ -88,8 +88,6 @@ export default class ChoroplethLegend extends React.PureComponent {
 
     const sliderHeight = 10 + (5 * zoom);
 
-    const legendYStart = margins.top + 65;
-
     return (
       <svg
         className={styles['legend-container']}
@@ -97,12 +95,7 @@ export default class ChoroplethLegend extends React.PureComponent {
         height={height}
         width={width}
       >
-        <g className={styles['title-container']} transform="translate(0, 20)" >
-          <text className={styles.title} x="0" y="0">Legend</text>
-          <text className={styles['helper-text']} x="0" y="20"> Drag the ends of the slider to adjust the range displayed on the map.</text>
-          <text className={styles['helper-text']} x="0" y="40"> Click "Set Scale" to re-apply the color scale. Click "Reset" to return to the default settings.</text>
-        </g>
-        <g transform={`translate(${margins.left}, ${legendYStart})`}>
+        <g transform={`translate(${margins.left}, ${margins.top})`}>
           <Scatter
             ariaHideScatterGroup={ariaHideScatterGroup}
             colorAccessor={colorAccessor}

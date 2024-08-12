@@ -380,50 +380,56 @@ export default class Map extends React.Component {
 
     return (
       <div className={classNames(styles.legend, legendClassName)} style={legendStyle}>
-        <div className={styles['legend-wrapper']}>
-          <ResponsiveContainer className={styles['legend-responsive-container']}>
-            <ChoroplethLegend
-              ariaHideScatterGroup={ariaHideScatterGroup}
-              axisTickFormat={axisTickFormat}
-              colorAccessor={colorAccessor}
-              colorSteps={colorSteps}
-              colorScale={colorScale}
-              data={filterData(data, locationIdsOnMap, keyField)}
-              domain={domain}
-              focus={focus}
-              focusedClassName={focusedClassName}
-              focusedStyle={focusedStyle}
-              keyField={keyField}
-              legendAriaHideTickMarks={legendAriaHideTickMarks}
-              margins={legendMargins}
-              onClick={onClick}
-              onMouseLeave={onMouseLeave}
-              onMouseMove={onMouseMove}
-              onMouseOver={onMouseOver}
-              onSliderMove={this.handleSliderMove}
-              rangeExtent={rangeExtent}
-              selectedLocations={selectedLocations}
-              sliderHandleFormat={sliderHandleFormat}
-              unit={unit}
-              valueField={valueField}
-              x1={linearGradientStops[0] * 100}
-              x2={linearGradientStops[1] * 100}
-            />
-          </ResponsiveContainer>
+        <div className={styles['legend-title-wrapper']}>
+          <p className={styles['legend-title']}>Legend</p>
+          <p className={styles['helper-text']}> Drag the ends of the slider to adjust the range displayed on the map. Click "Set Scale" to re-apply the color scale. Click "Reset" to return to the default settings.</p>
         </div>
-        <div className={styles['button-wrapper']}>
-          <Button
-            className={`${styles['choropleth-legend-button']}`}
-            onClick={this.onSetScale}
-            text="SET SCALE"
-            disabled={sliderFullExtent}
-          />
-          <Button
-            className={`${styles['choropleth-legend-button']} ${styles.reset}`}
-            onClick={this.onResetScale}
-            text="RESET"
-            disabled={sliderFullExtent}
-          />
+        <div className={styles['legend-button-wrapper']}>
+          <div className={styles['legend-wrapper']}>
+            <ResponsiveContainer className={styles['legend-responsive-container']}>
+              <ChoroplethLegend
+                ariaHideScatterGroup={ariaHideScatterGroup}
+                axisTickFormat={axisTickFormat}
+                colorAccessor={colorAccessor}
+                colorSteps={colorSteps}
+                colorScale={colorScale}
+                data={filterData(data, locationIdsOnMap, keyField)}
+                domain={domain}
+                focus={focus}
+                focusedClassName={focusedClassName}
+                focusedStyle={focusedStyle}
+                keyField={keyField}
+                legendAriaHideTickMarks={legendAriaHideTickMarks}
+                margins={legendMargins}
+                onClick={onClick}
+                onMouseLeave={onMouseLeave}
+                onMouseMove={onMouseMove}
+                onMouseOver={onMouseOver}
+                onSliderMove={this.handleSliderMove}
+                rangeExtent={rangeExtent}
+                selectedLocations={selectedLocations}
+                sliderHandleFormat={sliderHandleFormat}
+                unit={unit}
+                valueField={valueField}
+                x1={linearGradientStops[0] * 100}
+                x2={linearGradientStops[1] * 100}
+              />
+            </ResponsiveContainer>
+          </div>
+          <div className={styles['button-wrapper']}>
+            <Button
+              className={`${styles['choropleth-legend-button']}`}
+              onClick={this.onSetScale}
+              text="SET SCALE"
+              disabled={sliderFullExtent}
+            />
+            <Button
+              className={`${styles['choropleth-legend-button']} ${styles.reset}`}
+              onClick={this.onResetScale}
+              text="RESET"
+              disabled={sliderFullExtent}
+            />
+          </div>
         </div>
       </div>
     );
